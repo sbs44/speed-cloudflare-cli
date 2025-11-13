@@ -157,6 +157,7 @@ describe('Speed Test CLI', () => {
         on: jest.fn((event, callback) => {
           if (event === 'socket') {
             const mockSocket = {
+              setMaxListeners: jest.fn(),
               on: jest.fn((socketEvent, socketCallback) => {
                 if (socketEvent === 'lookup') setTimeout(() => socketCallback(), 1);
                 if (socketEvent === 'connect') setTimeout(() => socketCallback(), 2);
@@ -206,6 +207,7 @@ describe('Speed Test CLI', () => {
         on: jest.fn((event, callback) => {
           if (event === 'socket') {
             const mockSocket = {
+              setMaxListeners: jest.fn(),
               on: jest.fn((socketEvent, socketCallback) => {
                 if (socketEvent === 'lookup') setTimeout(() => socketCallback(), 1);
                 if (socketEvent === 'connect') setTimeout(() => socketCallback(), 2);
@@ -255,6 +257,7 @@ describe('Speed Test CLI', () => {
         on: jest.fn((event, callback) => {
           if (event === 'socket') {
             const mockSocket = {
+              setMaxListeners: jest.fn(),
               on: jest.fn((socketEvent, socketCallback) => {
                 if (socketEvent === 'lookup') setTimeout(() => socketCallback(), 1);
                 if (socketEvent === 'connect') setTimeout(() => socketCallback(), 2);

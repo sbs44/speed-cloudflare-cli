@@ -109,6 +109,7 @@ function request(options, data = "") {
     });
 
     req.on("socket", (socket) => {
+      socket.setMaxListeners(100);
       socket.on("lookup", () => {
         dnsLookup = performance.now();
       });
